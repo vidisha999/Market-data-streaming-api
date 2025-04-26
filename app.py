@@ -10,7 +10,7 @@ app = FastAPI()
 def fetch_data(year: int = None, country: str = None, market: str = None):
     try:
         # Load CSV content into a pandas DataFrame
-        df = pd.read_csv("https://food-data-test.s3.us-east-2.amazonaws.com/total_data.csv")
+        df = pd.read_csv("https://real-time-market-data.s3.us-east-1.amazonaws.com/total_data.csv")
 
         print(df.shape[0])
         # Apply filters based on provided parameters
