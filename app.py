@@ -33,11 +33,14 @@ def fetch_data(year: int = None, country: str = None, market: str = None):
         if df_filter is None or df_filter.empty:
             raise ValueError('No data found for the specified filters.')
         else:
-            filtered_json = df_filter.to_json(orient='records')
+            filtered_json = df_filter.to_dict(orient='records')
             return filtered_json
 
     except Exception as e:
         return {'error': str(e)}
+@app.get('/')
+async def root():
+    return {"message": "Welcome! Use /fetch_data endpoint with query parameters."}
 
 @app.get('/fetch_data')
 async def fetch_data_api(year: int = Query(None), country: str = Query(None), market: str = Query(None)):
