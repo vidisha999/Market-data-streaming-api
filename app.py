@@ -39,7 +39,7 @@ def fetch_data(year: int = None, country: str = None, market: str = None):
     except Exception as e:
         return {'error': str(e)}
 
-@app.get('/fetch_data')
+@app.get('/')
 async def fetch_data_api(year: int = Query(None), country: str = Query(None), market: str = Query(None)):
     try:
         # Call fetch_data function with provided parameters
