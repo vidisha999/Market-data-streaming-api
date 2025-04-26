@@ -33,7 +33,7 @@ def fetch_data(year: int = None, country: str = None, market: str = None):
         if df_filter is None or df_filter.empty:
             raise ValueError('No data found for the specified filters.')
         else:
-            filtered_json = df_filter.to_dict(orient='records')
+            filtered_json = df_filter.to_json(orient='records')
             return filtered_json
 
     except Exception as e:
