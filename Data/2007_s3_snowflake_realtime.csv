@@ -1,0 +1,11 @@
+COUNTRY,MKT_NAME,DATES,ITEM,CLOSE,HIGH,INFLATION,LOW,OPEN,TRUST
+Afghanistan,Badakhshan,2007-01-01,BREAD,31.57,31.91,0,31.3,31.47,7.8
+Afghanistan,Badakhshan,2007-01-01,FOOD,0.61,0.62,0,0.6,0.6,7.8
+Afghanistan,Badakhshan,2007-01-01,RICE,23.35,24.34,0,22.73,23.29,7.9
+Afghanistan,Badakhshan,2007-01-01,WHEAT,15.07,15.6,0,14.78,15.04,7
+Afghanistan,Badakhshan,2007-02-01,BREAD,32.36,32.36,0,31.4,31.7,7.8
+Afghanistan,Badakhshan,2007-02-01,FOOD,0.61,0.62,0,0.6,0.61,7.8
+Afghanistan,Badakhshan,2007-02-01,RICE,23.3,24.4,0,22.79,23.59,7.9
+Afghanistan,Badakhshan,2007-02-01,WHEAT,15.12,15.64,0,14.81,15.22,7
+Afghanistan,Badakhshan,2007-03-01,BREAD,32.19,32.86,0,32.14,32.5,7.8
+Afghanistan,Badakhshan,2007-03-01,FOOD,0.62,0.62,0,0.61,0.62,7.8
