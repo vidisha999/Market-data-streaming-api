@@ -70,14 +70,15 @@ Amazon Kinesis enables seamless collection, processing, and analysis of real-tim
 kinesis_client = boto3.client('kinesis', region_name='us-east-1', aws_access_key_id='',
      aws_secret_access_key='')
 ```
-The [completed code for fetching data from API](Installation & Execution codes/Fetch_data_from_API_vidishai.ipynb) demonstrates how data is retrieved by inivoking API  with configured parameters for the year 2007 and then streamed to the Kinesis Data Stream.
+The [completed code for fetching data from API](Installation_execution_codes/Fetch_data_from_API_vidishai.ipynb) demonstrates how data is retrieved by inivoking API  with configured parameters for the year 2007 and then streamed to the Kinesis Data Stream.
 
 ### 3. AWS Kinesis Data Firehose 
 
-Amazon Kinesis Data Firehose is a fully managed service that automatically delivers real-time streaming data to destinations like Amazon S3 and Amazon Redshift.
-
-
-
+Amazon Kinesis Data Firehose is a fully managed service that automatically delivers real-time streaming data to destinations like Amazon S3 and Amazon Redshift. It only requires users to configure the data procedures to send data to firehose and it automatically delivers the data to specified destination.Firehose is focused on data delivery and does not provide long-term data storage; it buffers data for a short period using size-based or time-based thresholds before delivering. Kinesis Data Firehose can transform data before delivering it to the
+destination,using AWS Lambda functions, which allows you to modify the data before storing or analyzing it. For this project, the Kinesis Data Firehose was configured with a Kinesis Data Stream as the source and an Amazon S3 bucket as the destination for storing the transformed data.
+### 4.AWS lambda 
+AWS Lambda is a serverless compute service that allows to trigger and run code in response to events, without provisioning or managing servers. It automatically scales based on demand and integrates seamlessly with other AWS services and HTTP triggers.In this project, AWS Lambda was integrated with Kinesis Data Firehose, which streamed real-time logs in JSON format.The Lambda function was specifically built to transform these JSON logs into CSV format, enabling compatibility with Snowflake, the downstream data warehouse used for analytics.
+The transformation logic is defined within the [Lambda function's handler](Installation_execution_codes/lambda_function.py), which processes incoming records in real time.Once lambda function is integrated with the Kinesis Data Firehose, the Lambda function is triggered automatically whenever new data arrives from the Kinesis Data Stream to Kinesis Data Firehose. It then executes the defined transformation logic to process and format the data before delivery to the destination.
 
 
 
